@@ -18,75 +18,34 @@
     </header>
     <section>
         <h2>Отправить рецепт</h2>
-        <form name="form">
+        <form action="mail.php" method="post">
             <p>
                 <label for="name">Имя:</label>
-                <input type="text" name="name" placeholder="Введите ваше имя" />
-                <span id="error-name"></span>
+                <input type="text" name="name" placeholder="Введите ваше имя" required />
             </p>
             <p>
                 <label for="email">Email (формат: test@yandex.ru):</label>
-                <input type="text" name="email" placeholder="Введите электронный адрес" />
-                <span id="error-email"></span>
+                <input type="text" name="email" placeholder="Введите электронный адрес" required pattern="^\w+@\w+.+[a-z]$" />
             </p>
             <p>
-                <label for="tel">Телефон (формат: xxx-xxx-xxxx):</label>
-                <input type="tel" name="tel" placeholder="Введите номер телефона" />
+                <label for="tel">Телефон (формат: xxxxxxxxxx):</label>
+                <input type="tel" name="tel" placeholder="Введите номер телефона" pattern="^\d{10}$" required />
             </p>
             <p>
                 <label for="title_recept">Название рецепта:</label>
-                <input type="text" name="title_recept" placeholder="Введите название"  />
-                <span id="error-title"></span>
+                <input type="text" name="title_recept" placeholder="Введите название" required/>
             </p>
             <p>
                 <label for="message">Описание рецепта:</label>
-                <textarea name="message" cols="40" rows="6" ></textarea>
-                <span id="error-message"></span>
+                <textarea name="message" cols="40" rows="6" required></textarea>
             </p>
             <p>
-                <button class="submit" type="submit" onclick="return validate()">Отправить</button>
+                <button class="submit" type="submit">Отправить</button>
             </p>
         </form>
     </section>
     <footer>
         <p>&copy; 2017 - GolTROFF production</p>
     </footer>
-    <script type='text/javascript'>
-        function validate() {
-            //Считаем значения из полей name и email в переменные x и y
-            var name = document.forms['form']['name'].value;
-            var email = document.forms['form']['email'].value;
-            var title = document.forms['form']['title_recept'].value;
-            var message = document.forms['form']['message'].value; 
-            //Если поле name пустое выведем сообщение и предотвратим отправку формы
-            if (name.length == 0) {
-                document.getElementById('error-name').innerHTML = '*данное поле обязательно для заполнения';
-                return false;
-            }
-            //Если поле email пустое выведем сообщение и предотвратим отправку формы
-            if (email.length == 0) {
-                document.getElementById('error-email').innerHTML = '*данное поле обязательно для заполнения';
-                return false;
-            }
-            //Проверим содержит ли значение введенное в поле email символы @ и .
-            at = email.indexOf("@");
-            dot = email.indexOf(".");
-            //Если поле не содержит эти символы знач email введен не верно
-            if (at < 1 || dot < 1) {
-                document.getElementById('error-email').innerHTML = '*email введен не верно';
-                return false;
-            }
-            //Если поле title_recept пустое выведем сообщение и предотвратим отправку формы
-            if (title.length == 0) {
-                document.getElementById('error-title').innerHTML = '*данное поле обязательно для заполнения';
-                return false;
-            }
-            //Если поле message пустое выведем сообщение и предотвратим отправку формы
-            if (message.length == 0) {
-                document.getElementById('error-message').innerHTML = '*данное поле обязательно для заполнения';
-                return false;
-            }
-        }
-    </script>
 </body>
 </html>
