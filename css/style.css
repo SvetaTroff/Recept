@@ -126,3 +126,32 @@ section {
     width: 280px;
     height: 210px;
 }
+
+form .submit {
+    background: #88ce05;
+    color: #fff;
+    padding: 7px 10px;
+    border: none;
+    text-transform: uppercase;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+form .submit:hover {
+    background: #446b06;
+}
+
+form input, form textarea {
+    display: block;
+    margin-top: 5px;
+    padding: 5px;
+    border: 1px solid #436d01;
+}
+
+.error input, .error textarea {
+    border: 1px solid red;
+}
+
+.error {
+    color: red;
+}

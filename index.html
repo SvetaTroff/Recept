@@ -13,7 +13,7 @@
         <nav>
             <a href="#">О проекте</a> 
             <a href="#">Рецепты</a> 
-            <a href="#" class="button">Отправить рецепт</a>
+            <a href="/addrecept.html" class="button">Отправить рецепт</a>
         </nav>
     </header>
     <section></section>
@@ -32,7 +32,7 @@
         });
 
         function xmlParser(xml) {
-			$(xml).find("item").each(function () {
+            $(xml).find("item").each(function () {
                 var date = $(this).find("pubDate").text();
                 date = date.substring(6, 18);
                 var month = date.substring(3, 6);
