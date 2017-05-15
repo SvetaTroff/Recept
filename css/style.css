@@ -1,0 +1,124 @@
+﻿html {
+    margin: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #333333;
+    padding-top: 50px;
+    padding-bottom: 20px;
+    background: url("/img/fon.jpg") no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+body {
+    max-width: 1070px;
+    box-shadow: 0rem 0 0.3125rem 0rem rgba(0,0,0,0.25);
+    background: #fff;
+    padding: 0;
+    margin: auto;
+}
+
+header {
+    position: relative;
+    z-index: 1000;
+    min-height: 50px;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #dcdcdc;
+    background-color: #fff3e1;
+    padding: 5px;
+}
+
+.logo {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+nav {
+    display: inline-block;
+    width: 69%;
+    text-align: right;
+}
+
+nav a {
+    margin: 0 10px;
+    padding-bottom: 0;
+    color: #494949;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: inline-block;
+    text-decoration: none;
+}
+
+nav a:hover {
+    color: #446b06;
+}
+
+nav .button {
+    background: #88ce05;
+    color: #fff;
+    padding: 7px 10px;
+}
+
+nav .button:hover {
+    background: #446b06;
+    color: #fff;
+}
+
+footer {
+    margin: 10px 15px;
+    border-top: 1px solid #eeeeee;
+    padding-bottom: 1px;
+}
+
+section {
+    padding: 0 15px;
+}
+
+.item {
+    margin-bottom: 30px;
+    text-align: center;
+    display: inline-block;
+    width: 344px;
+}
+
+.item a {
+    display: block;
+    width: 280px;
+    margin: auto;
+    text-decoration: none;
+    line-height: 1.3;
+    box-shadow: 0 0.0625rem 0.1875rem rgba(0,0,0,0.25);
+}
+
+.item a:hover {
+    background: #f3f3f3;
+    text-decoration: none;
+}
+
+.item p {
+    text-align: left;
+    color: #8a8a8a;
+    min-height: 70px;
+    margin: 10px 0;
+    padding: 0 10px 10px;
+}
+
+.item .time {
+    color: #8a8a8a;
+    padding: 10px;
+    font-size: 10pt;
+    margin-bottom: 6px;
+    min-height: inherit;
+}
+
+.item h2 {
+    text-align: left;
+    padding: 0 10px;
+    margin-top: 0;
+    color: #494949;
+    font-size: 16pt;
+    margin-bottom: 0;
+    font-weight: 600;
+}
+
