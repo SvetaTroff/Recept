@@ -6,7 +6,7 @@
     color: #333333;
     padding-top: 50px;
     padding-bottom: 20px;
-    background: url("/img/fon.jpg") no-repeat;
+    background: url("../img/fon.jpg") no-repeat;
     background-size: cover;
     background-attachment: fixed;
 }
