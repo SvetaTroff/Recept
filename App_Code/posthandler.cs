@@ -48,18 +48,14 @@ public class posthandler : IHttpHandler
         {
             messageValue = context.Request.Form["message"];
         }
-
-        string message = "Рецепт успешно отправлен!";
-        string error = "Ошибка! Не верны формат, поправте данные и попробуйте снова.";
-
-        if ((nameValue != "") && (emailValue != "") && (telValue != "") && (titleValue != "") && (messageValue != ""))
-        {
-            //HttpContext.Current.Response.Write("<SCRIPT LANGUAGE='JavaScript'>alert("+ message + ")</SCRIPT>");
-        }
-        else
-        {
-            //HttpContext.Current.Response.Write("<SCRIPT LANGUAGE='JavaScript'>alert(" + error + ")</SCRIPT>");
-        }
-        //respo
+        return;
+        //string message = "Рецепт успешно отправлен!";
+        //string error = "Ошибка! Не верны формат, поправте данные и попробуйте снова.";
+        
+        //if ((nameValue != "") && (emailValue != "") && (telValue != "") && (titleValue != "") && (messageValue != ""))
+        //{
+        //    HttpResponse.RemoveOutputCacheItem(message);
+        //}
+        //return;
     }
 }

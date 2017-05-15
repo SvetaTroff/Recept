@@ -18,7 +18,7 @@
     </header>
     <section>
         <h2>Отправить рецепт</h2>
-        <form action="posthandler.axd" method="post">
+        <form method="POST" id="formx" action="javascript:void(null);" onsubmit="call()">
             <p>
                 <label for="name">Имя:</label>
                 <input type="text" name="name" placeholder="Введите ваше имя" required />
@@ -33,7 +33,7 @@
             </p>
             <p>
                 <label for="title_recept">Название рецепта:</label>
-                <input type="text" name="title_recept" placeholder="Введите название" required/>
+                <input type="text" name="title_recept" placeholder="Введите название" required />
             </p>
             <p>
                 <label for="message">Описание рецепта:</label>
@@ -47,5 +47,23 @@
     <footer>
         <p>&copy; 2017 - GolTROFF production</p>
     </footer>
+    <script type="text/javascript" language="javascript">
+        function call() {
+            var msg = $('#formx').serialize();
+            $.ajax({
+                type: 'POST',
+                url: 'posthandler.axd',
+                data: msg,
+                success: function (data) {
+                    alert('Рецепт успешно отправлен!');
+                    $("#formx")[0].reset();
+                },
+                error: function () {
+                    alert('Возникла ошибка! Не верны формат, поправте данные и попробуйте снова.');
+                }
+            });
+
+        }
+    </script>
 </body>
 </html>
