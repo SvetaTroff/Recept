@@ -32,8 +32,28 @@
         });
 
         function xmlParser(xml) {
-            $(xml).find("item").each(function () {
-                $("section").append('<div class="item"><a href="' + $(this).find("link").text() + '" target="_blank"><img src="' + $(this).find("enclosure").attr("url") + '" /><p class="time">' + $(this).find("pubDate").text() + '</p><h2>' + $(this).find("title").text() + '</h2><p>' + $(this).find("description").text() + '</p></a></div>');
+			$(xml).find("item").each(function () {
+                var date = $(this).find("pubDate").text();
+                date = date.substring(6, 18);
+                var month = date.substring(3, 6);
+                switch(month) {
+                    case 'May':
+                        monthRu = 'Мая ';
+                        break;
+
+                    case 'Apr':
+                        monthRu = 'Апреля ';
+                        break;
+
+                    case 'Mar':
+                        monthRu = 'Марта ';
+                        break;
+                    
+                    default:
+                        monthRu = ' ';
+                }
+                date = date.substring(0, 3) + monthRu + date.substring(7, 11);
+                $("section").append('<div class="item"><a href="' + $(this).find("link").text() + '" target="_blank"><img src="' + $(this).find("enclosure").attr("url") + '" /><p class="time">' + date + '</p><h2>' + $(this).find("title").text() + '</h2><p>' + $(this).find("description").text() + '</p></a></div>');
             });
         }
     </script>
