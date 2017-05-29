@@ -11,8 +11,8 @@
     <header>
         <a href="/" class="logo"><img src="img/logo.png" /></a>
         <nav>
-            <a href="https://www.edimdoma.ru/">О проекте</a> 
-            <a href="#">Рецепты</a> 
+            <a href="https://www.edimdoma.ru/">О проекте</a>
+            <a href="#">Рецепты</a>
             <a href="/addrecept.html" class="button">Отправить рецепт</a>
         </nav>
     </header>
@@ -36,19 +36,63 @@
                 var date = $(this).find("pubDate").text();
                 date = date.substring(6, 18);
                 var month = date.substring(3, 6);
-                switch(month) {
-                    case 'May':
-                        monthRu = 'Мая ';
+                var arr = [
+                    'Января',
+                    'Февраля',
+                    'Марта',
+                    'Апреля',
+                    'Мая',
+                    'Июня',
+                    'Июля',
+                    'Августа',
+                    'Сентября',
+                    'Ноября',
+                    'Декабря',
+                ];
+                switch (month) {
+                    case 'Jan':
+                        monthRu = arr[0];
                         break;
 
-                    case 'Apr':
-                        monthRu = 'Апреля ';
+                    case 'Feb':
+                        monthRu = arr[1];
                         break;
 
                     case 'Mar':
-                        monthRu = 'Марта ';
+                        monthRu = arr[2];
                         break;
-                    
+
+                    case 'Apr':
+                        monthRu = arr[3];
+                        break;
+
+                    case 'May':
+                        monthRu = arr[4];
+                        break;
+
+                    case 'June':
+                        monthRu = arr[5];
+                        break;
+
+                    case 'July':
+                        monthRu = arr[6];
+                        break;
+                    case 'Aug':
+                        monthRu = arr[7];
+                        break;
+                    case 'Sept':
+                        monthRu = arr[8];
+                        break;
+                    case 'Oct':
+                        monthRu = arr[9];
+                        break;
+                    case 'Nov':
+                        monthRu = arr[10];
+                        break;
+
+                    case 'Dec':
+                        monthRu = arr[11];
+                        break;
                     default:
                         monthRu = ' ';
                 }
