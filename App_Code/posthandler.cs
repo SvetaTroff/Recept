@@ -20,9 +20,9 @@ public class posthandler : IHttpHandler
 
     public void ProcessRequest(HttpContext context)
     {
-        //throw new NotImplementedException();
         string nameValue = string.Empty;
-        if (!string.IsNullOrEmpty(context.Request.Form["name"]))
+        //string patter = @".+";
+        if (!string.IsNullOrEmpty(context.Request.Form["name"])
         {
             nameValue = context.Request.Form["name"];
         }
@@ -49,13 +49,5 @@ public class posthandler : IHttpHandler
             messageValue = context.Request.Form["message"];
         }
         return;
-        //string message = "Рецепт успешно отправлен!";
-        //string error = "Ошибка! Не верны формат, поправте данные и попробуйте снова.";
-        
-        //if ((nameValue != "") && (emailValue != "") && (telValue != "") && (titleValue != "") && (messageValue != ""))
-        //{
-        //    HttpResponse.RemoveOutputCacheItem(message);
-        //}
-        //return;
     }
 }
