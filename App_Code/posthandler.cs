@@ -20,9 +20,9 @@ public class posthandler : IHttpHandler
 
     public void ProcessRequest(HttpContext context)
     {
+        string patternNotNull = @".+";
         string nameValue = string.Empty;
-        //string patter = @".+";
-        if (!string.IsNullOrEmpty(context.Request.Form["name"])
+        if (Regex.IsMatch(context.Request.Form["name"], patternNotNull, RegexOptions.IgnoreCase))
         {
             nameValue = context.Request.Form["name"];
         }
@@ -39,12 +39,12 @@ public class posthandler : IHttpHandler
             telValue = context.Request.Form["tel"];
         }
         string titleValue = string.Empty;
-        if (!string.IsNullOrEmpty(context.Request.Form["title_recept"]))
+        if (Regex.IsMatch(context.Request.Form["title_recept"], patternNotNull, RegexOptions.IgnoreCase))
         {
             titleValue = context.Request.Form["title_recept"];
         }
         string messageValue = string.Empty;
-        if (!string.IsNullOrEmpty(context.Request.Form["message"]))
+        if (Regex.IsMatch(context.Request.Form["message"], patternNotNull, RegexOptions.IgnoreCase))
         {
             messageValue = context.Request.Form["message"];
         }
